@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Requester异步请求管理库</title>
+<script type="text/javascript" src="requester.js"></script>
+<script type="text/javascript">
+<!--
+
+/**
+* 测试代码
+*/
+function doit() {
+    //注: test.json -> {"message":{},"success":"true","result":[]}
+    //Requester.get('ajax/test.json','',function(data){
+    //    alert(data.success)
+    //});
+
+    //注: 跨域会导致请求出错
+    //Requester.get('http://www.5imemo.com/other/ajax/jsonp.php','',function(data){alert(data.success)});
+    
+    //注: 跨域推荐JSONP
+    Requester.JSONP('http://www.5imemo.com/other/ajax/jsonp.php','',function(data){  
+        alert(data.id)
+    });
+}
+//*/
+
+
+
+//-->
+</script>
+</head>
+
+<body><button type="button" onclick="doit()">doit</button>
+
+</body>
+
+</html>
